@@ -1,0 +1,50 @@
+---
+import config from '../../site.json';
+---
+<section class="min-h-[90vh] flex items-center pt-16">
+  <div class="container mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: Text -->
+      <div class="fade-in-up">
+        <span class="badge badge-outline border-accent text-accent text-xs tracking-widest uppercase mb-4">Now Serving</span>
+        <h1 class="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6">
+          {config.tagline.split('.')[0]}<span class="text-accent">.</span>
+          <br />
+          <span class="text-base-content/60">{config.tagline.split('.').slice(1).join('.').trim()}</span>
+        </h1>
+        <p class="text-lg text-base-content/70 max-w-md mb-8">
+          {config.description}
+        </p>
+        <div class="flex gap-4">
+          <a href="#menu" class="btn btn-primary btn-lg px-8">
+            Order Now
+          </a>
+          <a href="#specials" class="btn btn-outline btn-lg px-8">
+            Today's Specials
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Food image -->
+      <div class="fade-in-up relative" style="animation-delay: 0.3s;">
+        <div class="relative aspect-square max-w-lg mx-auto">
+          <!-- Accent glow behind image -->
+          <div class="absolute inset-0 bg-primary/10 rounded-3xl blur-3xl"></div>
+          <div class="relative bg-base-200 rounded-3xl overflow-hidden aspect-square border border-base-300/50">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=800&fit=crop" alt="Flame Kitchen signature dishes" class="w-full h-full object-cover" />
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-4 -left-4 bg-base-200 border border-base-300/50 rounded-2xl p-4 shadow-xl">
+            <p class="text-xs text-base-content/60 uppercase tracking-wider">Starting at</p>
+            <p class="text-2xl font-heading font-bold text-accent">$15</p>
+          </div>
+          <!-- Floating hours badge -->
+          <div class="absolute -top-4 -right-4 bg-base-200 border border-base-300/50 rounded-2xl p-4 shadow-xl">
+            <p class="text-xs text-base-content/60 uppercase tracking-wider">Open Today</p>
+            <p class="text-sm font-heading font-bold text-accent">11AM - 9PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

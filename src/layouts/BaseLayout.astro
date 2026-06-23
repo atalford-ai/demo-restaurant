@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+import config from '../../site.json';
+import DemoBanner from '../components/DemoBanner.astro';
+import Navbar from '../components/Navbar.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = config.business_name } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="autumn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={config.description} />
+  <title>{title} | {config.business_name}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="min-h-screen bg-base-100 text-base-content">
+  <DemoBanner />
+  <Navbar />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <ThemeToggle />
+
+  <script is:inline>
+    // Auto dark/light based on time of day
+    (function() {
+      const hour = new Date().getHours();
+      const prefersDark = hour < 7 || hour >= 19;
+      const saved = localStorage.getItem('flamekitchen-theme');
+      const theme = saved || (prefersDark ? 'coffee' : 'autumn');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{
+  "business_name": "Flame Kitchen",
+  "tagline": "Soul Food. Street Style.",
+  "description": "From the grill to your plate — authentic flavors, bold spices, and food that feeds the soul.",
+  "theme": "autumn",
+  "fonts": {
+    "heading": "Abril Fatface",
+    "body": "Source Sans 3"
+  },
+  "is_demo": true,
+  "demo_cta": "https://altitudz.com",
+  "contact": {
+    "email": "hello@flamekitchen.com",
+    "phone": "(404) 555-0142",
+    "address": "789 Peachtree St NW, Atlanta, GA 30308"
+  },
+  "hours": {
+    "weekdays": "11:00 AM - 9:00 PM",
+    "friday_saturday": "11:00 AM - 11:00 PM",
+    "sunday": "12:00 PM - 8:00 PM"
+  },
+  "social": {
+    "instagram": "https://instagram.com/flamekitchen",
+    "twitter": "https://twitter.com/flamekitchen",
+    "tiktok": "https://tiktok.com/@flamekitchen"
+  },
+  "sections": {
+    "hero": true,
+    "menu": true,
+    "specials": true,
+    "about": true,
+    "catering": true,
+    "contact": true,
+    "footer": true,
+    "reviews": false,
+    "blog": false,
+    "loyalty": false
+  },
+  "menu": [
+    {
+      "category": "Mains",
+      "items": [
+        {
+          "name": "Jerk Chicken",
+          "description": "Slow-marinated in our signature jerk spice blend, chargrilled to perfection. Served with rice and peas.",
+          "price": 16
+        },
+        {
+          "name": "Smoked Brisket",
+          "description": "12-hour oak-smoked beef brisket, hand-sliced thick. Topped with house-made BBQ glaze.",
+          "price": 18
+        },
+        {
+          "name": "Blackened Catfish",
+          "description": "Wild-caught catfish dusted in Cajun spices, pan-seared crispy. Served with tartar and slaw.",
+          "price": 15
+        },
+        {
+          "name": "Oxtail Stew",
+          "description": "Braised oxtail in a rich, savory gravy with butter beans. A soul food classic done right.",
+          "price": 22
+        }
+      ]
+    },
+    {
+      "category": "Sides",
+      "items": [
+        {
+          "name": "Mac & Cheese",
+          "description": "Five-cheese blend, baked golden with a crispy breadcrumb crust.",
+          "price": 6
+        },
+        {
+          "name": "Collard Greens",
+          "description": "Slow-simmered with smoked turkey and a touch of vinegar heat.",
+          "price": 5
+        },
+        {
+          "name": "Cornbread",
+          "description": "Sweet honey-butter cornbread, baked fresh every hour.",
+          "price": 3
+        },
+        {
+          "name": "Fried Plantains",
+          "description": "Ripe plantains fried golden, sprinkled with sea salt.",
+          "price": 5
+        }
+      ]
+    },
+    {
+      "category": "Drinks",
+      "items": [
+        {
+          "name": "Fresh Lemonade",
+          "description": "Hand-squeezed lemonade with a hint of mint. Ice cold.",
+          "price": 4
+        },
+        {
+          "name": "Sweet Tea",
+          "description": "Southern-style sweet tea brewed daily. The real deal.",
+          "price": 3
+        },
+        {
+          "name": "Ginger Beer",
+          "description": "Spicy house-brewed ginger beer with lime. Bold and refreshing.",
+          "price": 5
+        }
+      ]
+    }
+  ],
+  "specials": [
+    {
+      "name": "The Flame Platter",
+      "description": "Our signature combo: jerk chicken, smoked brisket, mac & cheese, collard greens, and cornbread. Feeds the whole soul.",
+      "price": 32,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=600&fit=crop",
+      "badge": "Fan Favorite"
+    },
+    {
+      "name": "Sunday Oxtail Special",
+      "description": "Braised oxtail over rice and peas with fried plantains and a side of our famous pepper sauce.",
+      "price": 26,
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop",
+      "badge": "Weekend Only"
+    },
+    {
+      "name": "Catfish & Grits",
+      "description": "Blackened catfish over creamy stone-ground grits with roasted tomato relish and a drizzle of hot honey.",
+      "price": 19,
+      "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=600&fit=crop",
+      "badge": "New"
+    }
+  ],
+  "built_by": {
+    "name": "Altitudz",
+    "url": "https://altitudz.com"
+  }
+}

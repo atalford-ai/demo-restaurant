@@ -1,0 +1,52 @@
+---
+import config from '../../site.json';
+const year = new Date().getFullYear();
+---
+<footer class="bg-base-200 border-t border-base-300/50">
+  <div class="container mx-auto px-6 lg:px-12 py-16">
+    <div class="grid md:grid-cols-4 gap-12">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-heading font-bold mb-4 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+          </svg>
+          <span><span class="text-accent">{config.business_name.split(' ')[0]}</span> {config.business_name.split(' ').slice(1).join(' ')}</span>
+        </h3>
+        <p class="text-base-content/60 max-w-sm">{config.description}</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-heading font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-base-content/60">
+          <li><a href="#menu" class="hover:text-accent transition-colors">Menu</a></li>
+          <li><a href="#specials" class="hover:text-accent transition-colors">Specials</a></li>
+          <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
+          <li><a href="#catering" class="hover:text-accent transition-colors">Catering</a></li>
+          <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h4 class="font-heading font-semibold mb-4">Hours</h4>
+        <ul class="space-y-2 text-base-content/60">
+          <li><span class="text-base-content/80">Mon - Thu:</span> {config.hours.weekdays}</li>
+          <li><span class="text-base-content/80">Fri - Sat:</span> {config.hours.friday_saturday}</li>
+          <li><span class="text-base-content/80">Sunday:</span> {config.hours.sunday}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider my-8"></div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-base-content/50">
+      <p>&copy; {year} {config.business_name}. All rights reserved.</p>
+      <p>
+        Built by <a href={config.built_by.url} target="_blank" rel="noopener" class="text-accent hover:underline">{config.built_by.name}</a>
+      </p>
+    </div>
+  </div>
+</footer>
