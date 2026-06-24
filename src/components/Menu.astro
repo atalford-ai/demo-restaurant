@@ -1,6 +1,23 @@
 ---
 import config from '../../site.json';
 const menuCategories = config.menu;
+
+// Dietary/spice badges for items (based on item characteristics)
+function getBadges(item: { name: string; description: string }) {
+  const badges: { label: string; class: string }[] = [];
+  const desc = item.description.toLowerCase();
+  const name = item.name.toLowerCase();
+  if (desc.includes('spice') || desc.includes('jerk') || desc.includes('cajun') || desc.includes('pepper') || desc.includes('spicy')) {
+    badges.push({ label: 'Spicy', class: 'badge-error' });
+  }
+  if (desc.includes('vegan') || name.includes('plantain') || name.includes('collard') || name.includes('cornbread')) {
+    badges.push({ label: 'Veggie', class: 'badge-success' });
+  }
+  if (desc.includes('gluten') || name.includes('catfish') || name.includes('oxtail')) {
+    badges.push({ label: 'GF', class: 'badge-info' });
+  }
+  return badges;
+}
 ---
 <section id="menu" class="py-24 px-6 lg:px-12">
   <div class="container mx-auto">
@@ -28,19 +45,24 @@ const menuCategories = config.menu;
     <!-- Menu Items -->
     {menuCategories.map((cat, i) => (
       <div
-        class:list={["menu-panel grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto stagger-children", { "hidden": i !== 0 }]}
+        class:list={["menu-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto", { "hidden": i !== 0 }]}
         data-panel={cat.category}
       >
         {cat.items.map((item) => (
-          <div class="card bg-base-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-            <div class="card-body p-6">
-              <div class="flex justify-between items-start gap-4">
-                <div class="flex-1">
-                  <h3 class="font-heading font-semibold text-lg">{item.name}</h3>
-                  <p class="text-base-content/60 text-sm mt-1 leading-relaxed">{item.description}</p>
-                </div>
-                <span class="text-accent font-heading font-bold text-xl whitespace-nowrap">${item.price}</span>
+          <div class="card card-compact bg-base-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+            <div class="card-body">
+              <div class="flex justify-between items-start gap-3">
+                <h3 class="card-title text-base font-heading font-semibold">{item.name}</h3>
+                <span class="text-accent font-heading font-bold text-lg whitespace-nowrap">${item.price}</span>
               </div>
+              <p class="text-base-content/60 text-sm leading-relaxed">{item.description}</p>
+              {getBadges(item).length > 0 && (
+                <div class="card-actions mt-2">
+                  {getBadges(item).map((b) => (
+                    <span class={`badge badge-sm ${b.class}`}>{b.label}</span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ))}
